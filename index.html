@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1><span class="neon-x mark-x" aria-hidden="true"></span>Jogo da Velha<span class="neon-o mark-o" aria-hidden="true"></span></h1>
+      <div class="divider" aria-hidden="true"><span></span></div>
+    </header>
+
+    <section aria-label="Placar da sessão">
+      <dl class="scoreboard">
+        <div class="score-x"><dt><span class="neon-x mark-x" aria-hidden="true"></span>Vitórias X</dt><dd id="score-x" class="mark-x">0</dd></div>
+        <div class="score-draw"><dt><span class="draw-icon" aria-hidden="true">🤝</span>Empates</dt><dd id="score-draw">0</dd></div>
+        <div class="score-o"><dt><span class="neon-o mark-o" aria-hidden="true"></span>Vitórias O</dt><dd id="score-o" class="mark-o">0</dd></div>
+      </dl>
+    </section>
+
+    <section class="game" aria-label="Partida">
+      <div class="turn-banner">
+        <span class="player-icon" aria-hidden="true"></span>
+        <p id="status" class="status" role="status" aria-live="polite">Vez do Jogador X</p>
+      </div>
+      <div id="board" class="board" role="group" aria-label="Tabuleiro de 3 linhas e 3 colunas">
+        <button type="button" class="cell" aria-label="Linha 1, coluna 1: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 1, coluna 2: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 1, coluna 3: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 2, coluna 1: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 2, coluna 2: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 2, coluna 3: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 3, coluna 1: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 3, coluna 2: vazia"></button>
+        <button type="button" class="cell" aria-label="Linha 3, coluna 3: vazia"></button>
+      </div>
+      <div class="actions">
+        <button type="button" id="new-round"><span class="action-icon" aria-hidden="true">▷</span>Nova Partida</button>
+        <button type="button" id="reset-scores"><span class="action-icon" aria-hidden="true">⟳</span>Reiniciar Placar</button>
+        <button type="button" id="settings"><span class="action-icon" aria-hidden="true">⚙</span>Configurações</button>
+      </div>
+    </section>
+    <dialog id="settings-dialog" aria-labelledby="settings-title">
+      <h2 id="settings-title">Configurações</h2>
+      <label class="settings-option"><input id="reduce-glow" type="checkbox">Reduzir brilho neon</label>
+      <form method="dialog">
+        <button type="submit">Fechar</button>
+      </form>
+    </dialog>
+  </main>
+</body>
+</html>
